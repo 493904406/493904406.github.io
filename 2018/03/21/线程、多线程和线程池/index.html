@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | 欢迎</title>
+  <title>线程 、多线程和线程池 | 欢迎</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="开启线程的三种方式？    线程和进程的区别？ 为什么要有线程，而不是仅仅用进程？ run和start方法区别 如何控制某个方法允许并发访问线程的个数？ 在Java中wait和seelp方法的不同 谈谈wait/notify关键字的理解 什么导致线程阻塞？ 线程如何关闭？ 讲一下java中的同步的方法 数据一致性如何保证？ 如何保证线程安全？ 如何实现线程同步？ 两个进程同时要求写或者读，能不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/03/21/hello-world/index.html">
+<meta property="og:title" content="线程 、多线程和线程池">
+<meta property="og:url" content="http://yoursite.com/2018/03/21/线程、多线程和线程池/index.html">
 <meta property="og:site_name" content="欢迎">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-03-21T10:49:31.987Z">
+<meta property="og:description" content="开启线程的三种方式？    线程和进程的区别？ 为什么要有线程，而不是仅仅用进程？ run和start方法区别 如何控制某个方法允许并发访问线程的个数？ 在Java中wait和seelp方法的不同 谈谈wait/notify关键字的理解 什么导致线程阻塞？ 线程如何关闭？ 讲一下java中的同步的方法 数据一致性如何保证？ 如何保证线程安全？ 如何实现线程同步？ 两个进程同时要求写或者读，能不">
+<meta property="og:updated_time" content="2018-03-21T06:41:59.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="线程 、多线程和线程池">
+<meta name="twitter:description" content="开启线程的三种方式？    线程和进程的区别？ 为什么要有线程，而不是仅仅用进程？ run和start方法区别 如何控制某个方法允许并发访问线程的个数？ 在Java中wait和seelp方法的不同 谈谈wait/notify关键字的理解 什么导致线程阻塞？ 线程如何关闭？ 讲一下java中的同步的方法 数据一致性如何保证？ 如何保证线程安全？ 如何实现线程同步？ 两个进程同时要求写或者读，能不">
   
     <link rel="alternative" href="/atom.xml" title="欢迎" type="application/atom+xml">
   
@@ -149,35 +149,95 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-线程、多线程和线程池" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      线程 、多线程和线程池
     </h1>
   
 
         
-        <a href="/2018/03/21/hello-world/" class="archive-article-date">
-  	<time datetime="2018-03-21T10:49:31.986Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+        <a href="/2018/03/21/线程、多线程和线程池/" class="archive-article-date">
+  	<time datetime="2018-03-21T11:20:41.245Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+<ul>
+<li><a href="#开启线程的三种方式？">开启线程的三种方式？</a>   </li>
+<li><a href="#线程和进程的区别？">线程和进程的区别？</a></li>
+<li><a href="#为什么要有线程，而不是仅仅用进程？">为什么要有线程，而不是仅仅用进程？</a></li>
+<li><a href="#run和start方法区别">run和start方法区别</a></li>
+<li><a href="#如何控制某个方法允许并发访问线程的个数？">如何控制某个方法允许并发访问线程的个数？</a></li>
+<li><a href="#在Java中wait和seelp方法的不同">在Java中wait和seelp方法的不同</a></li>
+<li><a href="#谈谈wait/notify关键字的理解">谈谈wait/notify关键字的理解</a></li>
+<li><a href="#什么导致线程阻塞？">什么导致线程阻塞？</a></li>
+<li><a href="#线程如何关闭？">线程如何关闭？</a></li>
+<li><a href="#讲一下java中的同步的方法">讲一下java中的同步的方法</a></li>
+<li><a href="#数据一致性如何保证？">数据一致性如何保证？</a></li>
+<li><a href="#如何保证线程安全？">如何保证线程安全？</a></li>
+<li><a href="#如何实现线程同步？">如何实现线程同步？</a></li>
+<li><a href="#两个进程同时要求写或者读，能不能实现？如何防止进程的同步？">两个进程同时要求写或者读，能不能实现？如何防止进程的同步？</a></li>
+<li><a href="#线程间操作List">线程间操作List</a></li>
+<li><a href="#Java中对象的生命周期">Java中对象的生命周期</a></li>
+<li><a href="#Synchronized用法">Synchronized用法</a></li>
+<li><a href="#synchronize的原理">synchronize的原理</a></li>
+<li><a href="#谈谈对Synchronized关键字，类锁，方法锁，重入锁的理解">谈谈对Synchronized关键字，类锁，方法锁，重入锁的理解</a></li>
+<li><a href="#static synchronized 方法的多线程访问和作用">static synchronized 方法的多线程访问和作用</a></li>
+<li><a href="#同一个类里面两个synchronized方法，两个线程同时访问的问题">同一个类里面两个synchronized方法，两个线程同时访问的问题</a></li>
+<li><a href="#volatile的原理">volatile的原理</a></li>
+<li><a href="#谈谈volatile关键字的用法">谈谈volatile关键字的用法</a></li>
+<li><a href="#谈谈volatile关键字的作用">谈谈volatile关键字的作用</a></li>
+<li><a href="#谈谈NIO的理解">谈谈NIO的理解</a></li>
+<li><a href="#synchronized 和volatile 关键字的区别">synchronized 和volatile 关键字的区别</a></li>
+<li><a href="#synchronized与Lock的区别">synchronized与Lock的区别</a></li>
+<li><a href="#ReentrantLock 、synchronized和volatile比较">ReentrantLock 、synchronized和volatile比较</a></li>
+<li><a href="#ReentrantLock的内部实现">ReentrantLock的内部实现</a></li>
+<li><a href="#lock原理">lock原理</a></li>
+<li><a href="#死锁的四个必要条件？">死锁的四个必要条件？</a></li>
+<li><a href="#怎么避免死锁？">怎么避免死锁？</a></li>
+<li><a href="#对象锁和类锁是否会互相影响？">对象锁和类锁是否会互相影响？</a></li>
+<li><a href="#什么是线程池，如何使用?">什么是线程池，如何使用?</a></li>
+<li><a href="#Java的并发、多线程、线程模型">Java的并发、多线程、线程模型</a></li>
+<li><a href="#谈谈对多线程的理解">谈谈对多线程的理解</a></li>
+<li><a href="#多线程有什么要注意的问题？">多线程有什么要注意的问题？</a></li>
+<li><a href="#谈谈你对并发编程的理解并举例说明">谈谈你对并发编程的理解并举例说明</a></li>
+<li><a href="#如何保证多线程读写文件的安全？">如何保证多线程读写文件的安全？</a></li>
+<li><a href="#断点续传的实现">断点续传的实现</a></li>
+</ul>
+<!-- /MDTOC -->
+<h3 id="1、开启线程的三种方式？"><a href="#1、开启线程的三种方式？" class="headerlink" title="1、开启线程的三种方式？"></a>1、开启线程的三种方式？</h3><p>一、继承Thread类创建线程类<br>（1）定义Thread类的子类，并重写该类的run方法，该run方法的方法体就代表了线程要完成的任务。因此把run()方法称为执行体。</p>
+<p>（2）创建Thread子类的实例，即创建了线程对象。</p>
+<p>（3）调用线程对象的start()方法来启动该线程。</p>
+<p>示例代码：<br>java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;  </span><br><span class="line"></span><br><span class="line">public class FirstThreadTest extends Thread&#123;  </span><br><span class="line">    int i = 0;  </span><br><span class="line">    //重写run方法，run方法的方法体就是现场执行体  </span><br><span class="line">    public void run()  </span><br><span class="line">    &#123;  </span><br><span class="line">        for(;i&lt;100;i++)&#123;  </span><br><span class="line">        System.out.println(getName()+&quot;  &quot;+i);  </span><br><span class="line"></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    public static void main(String[] args)  </span><br><span class="line">    &#123;  </span><br><span class="line">        for(int i = 0;i&lt; 100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot;  : &quot;+i);  </span><br><span class="line">            if(i==20)  </span><br><span class="line">            &#123;  </span><br><span class="line">                new FirstThreadTest().start();  </span><br><span class="line">                new FirstThreadTest().start();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上述代码中Thread.currentThread()方法返回当前正在执行的线程对象。GetName()方法返回调用该方法的线程的名字。</p>
+<p>二、通过Runnable接口创建线程类<br>（1）定义runnable接口的实现类，并重写该接口的run()方法，该run()方法的方法体同样是该线程的线程执行体。</p>
+<p>（2）创建 Runnable实现类的实例，并依此实例作为Thread的target来创建Thread对象，该Thread对象才是真正的线程对象。</p>
+<p>（3）调用线程对象的start()方法来启动该线程。</p>
+<p>示例代码：<br>java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;  </span><br><span class="line"></span><br><span class="line">public class RunnableThreadTest implements Runnable  </span><br><span class="line">&#123;  </span><br><span class="line"></span><br><span class="line">    private int i;  </span><br><span class="line">    public void run()  </span><br><span class="line">    &#123;  </span><br><span class="line">        for(i = 0;i &lt;100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    public static void main(String[] args)  </span><br><span class="line">    &#123;  </span><br><span class="line">        for(int i = 0;i &lt; 100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  </span><br><span class="line">            if(i==20)  </span><br><span class="line">            &#123;  </span><br><span class="line">                RunnableThreadTest rtt = new RunnableThreadTest();  </span><br><span class="line">                new Thread(rtt,&quot;新线程1&quot;).start();  </span><br><span class="line">                new Thread(rtt,&quot;新线程2&quot;).start();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>三、通过Callable和Future创建线程</p>
+<p>（1）创建Callable接口的实现类，并实现call()方法，该call()方法将作为线程执行体，并且有返回值。</p>
+<p>（2）创建Callable实现类的实例，使用FutureTask类来包装Callable对象，该FutureTask对象封装了该Callable对象的call()方法的返回值。</p>
+<p>（3）使用FutureTask对象作为Thread对象的target创建并启动新线程。</p>
+<p>（4）调用FutureTask对象的get()方法来获得子线程执行结束后的返回值</p>
+<p>实例代码：<br>java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;  </span><br><span class="line"></span><br><span class="line">import java.util.concurrent.Callable;  </span><br><span class="line">import java.util.concurrent.ExecutionException;  </span><br><span class="line">import java.util.concurrent.FutureTask;  </span><br><span class="line"></span><br><span class="line">public class CallableThreadTest implements Callable&lt;Integer&gt;  </span><br><span class="line">&#123;  </span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)  </span><br><span class="line">    &#123;  </span><br><span class="line">        CallableThreadTest ctt = new CallableThreadTest();  </span><br><span class="line">        FutureTask&lt;Integer&gt; ft = new FutureTask&lt;&gt;(ctt);  </span><br><span class="line">        for(int i = 0;i &lt; 100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot; 的循环变量i的值&quot;+i);  </span><br><span class="line">            if(i==20)  </span><br><span class="line">            &#123;  </span><br><span class="line">                new Thread(ft,&quot;有返回值的线程&quot;).start();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        try  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(&quot;子线程的返回值：&quot;+ft.get());  </span><br><span class="line">        &#125; catch (InterruptedException e)  </span><br><span class="line">        &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125; catch (ExecutionException e)  </span><br><span class="line">        &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    @Override  </span><br><span class="line">    public Integer call() throws Exception  </span><br><span class="line">    &#123;  </span><br><span class="line">        int i = 0;  </span><br><span class="line">        for(;i&lt;100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  </span><br><span class="line">        &#125;  </span><br><span class="line">        return i;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>二、创建线程的三种方式的对比</p>
+<p>采用实现Runnable、Callable接口的方式创见多线程时，优势是：</p>
+<p>线程类只是实现了Runnable接口或Callable接口，还可以继承其他类。</p>
+<p>在这种方式下，多个线程可以共享同一个target对象，所以非常适合多个相同线程来处理同一份资源的情况，从而可以将CPU、代码和数据分开，形成清晰的模型，较好地体现了面向对象的思想。</p>
+<p>劣势是：</p>
+<p>编程稍微复杂，如果要访问当前线程，则必须使用Thread.currentThread()方法。</p>
+<p>使用继承Thread类的方式创建多线程时优势是：</p>
+<p>编写简单，如果需要访问当前线程，则无需使用Thread.currentThread()方法，直接使用this即可获得当前线程。</p>
+<p>劣势是：</p>
+<p>线程类已经继承了Thread类，所以不能再继承其他父类。</p>
 
       
 
@@ -262,7 +322,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/03/21/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/03/21/线程、多线程和线程池/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,6 +334,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/03/21/欢迎做客我的博客园/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          前言
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -298,7 +372,7 @@
   
 
   
-  <div id="SOHUCS" sid="hello-world" ></div> 
+  <div id="SOHUCS" sid="线程、多线程和线程池" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
