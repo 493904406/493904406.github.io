@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>如何控制某个方法允许并发访问线程的个数 | 戎码人生</title>
+  <title>开启线程的三种方式 | 戎码人生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用semaphore（信号量） 先来了解一下semaphore。semaphore是一个线程同步结构，用于在信号间传递信号，以避免在信号间出现信号丢失，或者像锁一样用于保护一个关键区域。自从5.0开始，jdk在java.util.concurrent包里提供了Semaphore的官方实现，因此大家不需要自己去实现Semaphore。">
+  <meta name="description" content="1、继承Thread类创建线程类（1）定义Thread类的子类，并重写该类的run方法，该run方法的方法体就代表了线程要完成的任务。因此把run()方法称为执行体。 （2）创建Thread子类的实例，即创建了线程对象。 （3）调用线程对象的start()方法来启动该线程。">
 <meta name="keywords" content="线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何控制某个方法允许并发访问线程的个数">
-<meta property="og:url" content="http://yoursite.com/[object Object]/如何控制某个方法允许并发访问线程的个数/index.html">
+<meta property="og:title" content="开启线程的三种方式">
+<meta property="og:url" content="http://yoursite.com/开启线程的三种方式/index.html">
 <meta property="og:site_name" content="戎码人生">
-<meta property="og:description" content="使用semaphore（信号量） 先来了解一下semaphore。semaphore是一个线程同步结构，用于在信号间传递信号，以避免在信号间出现信号丢失，或者像锁一样用于保护一个关键区域。自从5.0开始，jdk在java.util.concurrent包里提供了Semaphore的官方实现，因此大家不需要自己去实现Semaphore。">
-<meta property="og:updated_time" content="2018-03-25T14:08:55.775Z">
+<meta property="og:description" content="1、继承Thread类创建线程类（1）定义Thread类的子类，并重写该类的run方法，该run方法的方法体就代表了线程要完成的任务。因此把run()方法称为执行体。 （2）创建Thread子类的实例，即创建了线程对象。 （3）调用线程对象的start()方法来启动该线程。">
+<meta property="og:updated_time" content="2018-03-25T14:08:46.381Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何控制某个方法允许并发访问线程的个数">
-<meta name="twitter:description" content="使用semaphore（信号量） 先来了解一下semaphore。semaphore是一个线程同步结构，用于在信号间传递信号，以避免在信号间出现信号丢失，或者像锁一样用于保护一个关键区域。自从5.0开始，jdk在java.util.concurrent包里提供了Semaphore的官方实现，因此大家不需要自己去实现Semaphore。">
+<meta name="twitter:title" content="开启线程的三种方式">
+<meta name="twitter:description" content="1、继承Thread类创建线程类（1）定义Thread类的子类，并重写该类的run方法，该run方法的方法体就代表了线程要完成的任务。因此把run()方法称为执行体。 （2）创建Thread子类的实例，即创建了线程对象。 （3）调用线程对象的start()方法来启动该线程。">
   
     <link rel="alternative" href="/atom.xml" title="戎码人生" type="application/atom+xml">
   
@@ -150,36 +150,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-如何控制某个方法允许并发访问线程的个数" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-开启线程的三种方式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      如何控制某个方法允许并发访问线程的个数
+      开启线程的三种方式
     </h1>
   
 
         
-        <a href="/[object Object]/如何控制某个方法允许并发访问线程的个数/" class="archive-article-date">
-  	<time datetime="2018-03-25T13:56:15.948Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
+        <a href="/开启线程的三种方式/" class="archive-article-date">
+  	<time datetime="2018-03-25T13:46:52.117Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用semaphore（信号量）</p>
-<p>先来了解一下semaphore。semaphore是一个线程同步结构，用于在信号间传递信号，以避免在信号间出现信号丢失，或者像锁一样用于保护一个关键区域。自从5.0开始，jdk在java.util.concurrent包里提供了Semaphore的官方实现，因此大家不需要自己去实现Semaphore。</p>
+        <p>1、继承Thread类创建线程类<br>（1）定义Thread类的子类，并重写该类的run方法，该run方法的方法体就代表了线程要完成的任务。因此把run()方法称为执行体。</p>
+<p>（2）创建Thread子类的实例，即创建了线程对象。</p>
+<p>（3）调用线程对象的start()方法来启动该线程。</p>
 <a id="more"></a>
-<p>####控制并发访问资源<br>Semaphore是一个控制访问多个共享资源的计数器。</p>
-<p>当一个线程想要访问某个共享资源，首先，它必须获得semaphore。如果semaphore的内部计数器的值大于0，那么semaphore减少计数器的值并允许访问共享的资源。计数器的值大于0表示，有可以自由使用的资源，所以线程可以访问并使用它们。</p>
-<p>另一种情况，如果semaphore的计数器的值等于0，那么semaphore让线程进入休眠状态一直到计数器大于0。计数器的值等于0表示全部的共享资源都正被线程们使用，所以此线程想要访问就必须等到某个资源成为自由的。</p>
-<p>当线程使用完共享资源时，他必须放出semaphore为了让其他线程可以访问共享资源。这个操作会增加semaphore的内部计数器的值。</p>
-<p>使用Semaphore类来实现一种比较特殊的semaphores种类，称为binary semaphores。这个semaphores种类保护访问共享资源的独特性，所以semaphore的内部计数器的值只能是1或者0。为了展示如何使用它，你将要实现一个PrintQueue类来让并发任务打印它们的任务。这个PrintQueue类会受到binary semaphore的保护，所以每次只能有一个线程可以打印。</p>
-<p>####怎么实现呢<br>java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">//1.   创建一个会实现print queue的类名为 PrintQueue。</span><br><span class="line">public class PrintQueue &#123;</span><br><span class="line"></span><br><span class="line">//2.   声明一个对象为Semaphore，称它为semaphore。</span><br><span class="line">private final Semaphore semaphore;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//3.   实现类的构造函数并初始能保护print quere的访问的semaphore对象的值。</span><br><span class="line">public PrintQueue()&#123;</span><br><span class="line">    semaphore=new Semaphore(1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//4.   实现Implement the printJob()方法，此方法可以模拟打印文档，并接收document对象作为参数。</span><br><span class="line">public void printJob (Object document)&#123;</span><br><span class="line"></span><br><span class="line">//5.   在这方法内，首先，你必须调用acquire()方法获得demaphore。这个方法会抛出 InterruptedException异常，使用必须包含处理这个异常的代码。</span><br><span class="line">try &#123;</span><br><span class="line">    semaphore.acquire();</span><br><span class="line"></span><br><span class="line">//6.   然后，实现能随机等待一段时间的模拟打印文档的行。</span><br><span class="line">long duration=(long)(Math.random()*10);</span><br><span class="line">System.out.printf(&quot;%s: PrintQueue: Printing a Job during %d seconds\n&quot;,Thread.currentThread().getName(),duration);</span><br><span class="line">Thread.sleep(duration);</span><br><span class="line"></span><br><span class="line">//7.    最后，释放semaphore通过调用semaphore的relaser()方法。</span><br><span class="line">&#125; catch (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">    semaphore.release();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//8.   创建一个名为Job的类并一定实现Runnable 接口。这个类实现把文档传送到打印机的任务。</span><br><span class="line">public class Job implements Runnable &#123;</span><br><span class="line"></span><br><span class="line">//9.   声明一个对象为PrintQueue，名为printQueue。</span><br><span class="line">private PrintQueue printQueue;</span><br><span class="line"></span><br><span class="line">//10. 实现类的构造函数，初始化这个类里的PrintQueue对象。</span><br><span class="line">public Job(PrintQueue printQueue)&#123;</span><br><span class="line">    this.printQueue=printQueue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//11. 实现方法run()。</span><br><span class="line">@Override</span><br><span class="line">public void run() &#123;</span><br><span class="line"></span><br><span class="line">//12. 首先， 此方法写信息到操控台表明任务已经开始执行了。</span><br><span class="line">System.out.printf(&quot;%s: Going to print a job\n&quot;,Thread. currentThread().getName());</span><br><span class="line"></span><br><span class="line">//13. 然后，调用PrintQueue 对象的printJob()方法。</span><br><span class="line">printQueue.printJob(new Object());</span><br><span class="line"></span><br><span class="line">//14. 最后， 此方法写信息到操控台表明它已经结束运行了。</span><br><span class="line">System.out.printf(&quot;%s: The document has been printed\n&quot;,Thread.currentThread().getName());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//15. 实现例子的main类，创建名为 Main的类并实现main()方法。</span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main (String args[])&#123;</span><br><span class="line"></span><br><span class="line">//16. 创建PrintQueue对象名为printQueue。</span><br><span class="line">PrintQueue printQueue=new PrintQueue();</span><br><span class="line"></span><br><span class="line">//17. 创建10个threads。每个线程会执行一个发送文档到print queue的Job对象。</span><br><span class="line">Thread thread[]=new Thread[10];</span><br><span class="line">for (int i=0; i&lt;10; i++)&#123;</span><br><span class="line">thread[i]=new Thread(new Job(printQueue),&quot;Thread&quot;+i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//18. 最后，开始这10个线程们。</span><br><span class="line">for (int i=0; i&lt;10; i++)&#123;</span><br><span class="line">thread[i].start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>未完待续…</p>
+<p>示例代码：<br>java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;  </span><br><span class="line"></span><br><span class="line">public class FirstThreadTest extends Thread&#123;  </span><br><span class="line">    int i = 0;  </span><br><span class="line">    //重写run方法，run方法的方法体就是现场执行体  </span><br><span class="line">    public void run()  </span><br><span class="line">    &#123;  </span><br><span class="line">        for(;i&lt;100;i++)&#123;  </span><br><span class="line">        System.out.println(getName()+&quot;  &quot;+i);  </span><br><span class="line"></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    public static void main(String[] args)  </span><br><span class="line">    &#123;  </span><br><span class="line">        for(int i = 0;i&lt; 100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot;  : &quot;+i);  </span><br><span class="line">            if(i==20)  </span><br><span class="line">            &#123;  </span><br><span class="line">                new FirstThreadTest().start();  </span><br><span class="line">                new FirstThreadTest().start();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上述代码中Thread.currentThread()方法返回当前正在执行的线程对象。GetName()方法返回调用该方法的线程的名字。</p>
+<p>2、通过Runnable接口创建线程类<br>（1）定义runnable接口的实现类，并重写该接口的run()方法，该run()方法的方法体同样是该线程的线程执行体。</p>
+<p>（2）创建 Runnable实现类的实例，并依此实例作为Thread的target来创建Thread对象，该Thread对象才是真正的线程对象。</p>
+<p>（3）调用线程对象的start()方法来启动该线程。</p>
+<p>示例代码：<br>java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;  </span><br><span class="line"></span><br><span class="line">public class RunnableThreadTest implements Runnable  </span><br><span class="line">&#123;  </span><br><span class="line"></span><br><span class="line">    private int i;  </span><br><span class="line">    public void run()  </span><br><span class="line">    &#123;  </span><br><span class="line">        for(i = 0;i &lt;100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    public static void main(String[] args)  </span><br><span class="line">    &#123;  </span><br><span class="line">        for(int i = 0;i &lt; 100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  </span><br><span class="line">            if(i==20)  </span><br><span class="line">            &#123;  </span><br><span class="line">                RunnableThreadTest rtt = new RunnableThreadTest();  </span><br><span class="line">                new Thread(rtt,&quot;新线程1&quot;).start();  </span><br><span class="line">                new Thread(rtt,&quot;新线程2&quot;).start();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3、通过Callable和Future创建线程</p>
+<p>（1）创建Callable接口的实现类，并实现call()方法，该call()方法将作为线程执行体，并且有返回值。</p>
+<p>（2）创建Callable实现类的实例，使用FutureTask类来包装Callable对象，该FutureTask对象封装了该Callable对象的call()方法的返回值。</p>
+<p>（3）使用FutureTask对象作为Thread对象的target创建并启动新线程。</p>
+<p>（4）调用FutureTask对象的get()方法来获得子线程执行结束后的返回值</p>
+<p>示例代码：<br>java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;  </span><br><span class="line"></span><br><span class="line">import java.util.concurrent.Callable;  </span><br><span class="line">import java.util.concurrent.ExecutionException;  </span><br><span class="line">import java.util.concurrent.FutureTask;  </span><br><span class="line"></span><br><span class="line">public class CallableThreadTest implements Callable&lt;Integer&gt;  </span><br><span class="line">&#123;  </span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)  </span><br><span class="line">    &#123;  </span><br><span class="line">        CallableThreadTest ctt = new CallableThreadTest();  </span><br><span class="line">        FutureTask&lt;Integer&gt; ft = new FutureTask&lt;&gt;(ctt);  </span><br><span class="line">        for(int i = 0;i &lt; 100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot; 的循环变量i的值&quot;+i);  </span><br><span class="line">            if(i==20)  </span><br><span class="line">            &#123;  </span><br><span class="line">                new Thread(ft,&quot;有返回值的线程&quot;).start();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        try  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(&quot;子线程的返回值：&quot;+ft.get());  </span><br><span class="line">        &#125; catch (InterruptedException e)  </span><br><span class="line">        &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125; catch (ExecutionException e)  </span><br><span class="line">        &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    @Override  </span><br><span class="line">    public Integer call() throws Exception  </span><br><span class="line">    &#123;  </span><br><span class="line">        int i = 0;  </span><br><span class="line">        for(;i&lt;100;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  </span><br><span class="line">        &#125;  </span><br><span class="line">        return i;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4、创建线程的三种方式的对比</p>
+<p>采用实现Runnable、Callable接口的方式创见多线程时，优势是：</p>
+<p>线程类只是实现了Runnable接口或Callable接口，还可以继承其他类。</p>
+<p>在这种方式下，多个线程可以共享同一个target对象，所以非常适合多个相同线程来处理同一份资源的情况，从而可以将CPU、代码和数据分开，形成清晰的模型，较好地体现了面向对象的思想。</p>
+<p>劣势是：</p>
+<p>编程稍微复杂，如果要访问当前线程，则必须使用Thread.currentThread()方法。</p>
+<p>使用继承Thread类的方式创建多线程时优势是：</p>
+<p>编写简单，如果需要访问当前线程，则无需使用Thread.currentThread()方法，直接使用this即可获得当前线程。</p>
+<p>劣势是：</p>
+<p>线程类已经继承了Thread类，所以不能再继承其他父类。</p>
 
       
 
@@ -275,7 +291,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/[object Object]/如何控制某个方法允许并发访问线程的个数/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/开启线程的三种方式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,9 +305,18 @@
   
 <nav id="article-nav">
   
+    <a href="/线程和进程的区别/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          线程和进程的区别
+        
+      </div>
+    </a>
   
-    <a href="/[object Object]/run()和start()方法区别/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">run()和start()方法区别</div>
+  
+    <a href="/未知的明天，来不及追寻/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">未知的明天，来不及追寻</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -321,7 +346,7 @@
   
 
   
-  <div id="SOHUCS" sid="如何控制某个方法允许并发访问线程的个数" ></div> 
+  <div id="SOHUCS" sid="开启线程的三种方式" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

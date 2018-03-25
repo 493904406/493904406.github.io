@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>未知的明天，来不及追寻 | 戎码人生</title>
+  <title>线程 、多线程和线程池 | 戎码人生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="很喜欢很想和你在一起，有时候很累很想放弃，可是我害怕你真的有那么一点喜欢我，而我自己撒手了，为了那一点不知道存在不存在的喜欢，我一直的等你，遇见不易。">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="工作以来很久没有静下心来学习过了，工作中用到啥也就看啥，也没有系统的全面的整理过点东西。今天就从拿线程开始吧。以后会陆续把之前用到的和之后学到的详细的整理一下。在以后的工作或面试中都会用到的。">
+<meta name="keywords" content="线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="未知的明天，来不及追寻">
-<meta property="og:url" content="http://yoursite.com/[object Object]/未知的明天，来不及追寻/index.html">
+<meta property="og:title" content="线程 、多线程和线程池">
+<meta property="og:url" content="http://yoursite.com/线程、多线程和线程池/index.html">
 <meta property="og:site_name" content="戎码人生">
-<meta property="og:description" content="很喜欢很想和你在一起，有时候很累很想放弃，可是我害怕你真的有那么一点喜欢我，而我自己撒手了，为了那一点不知道存在不存在的喜欢，我一直的等你，遇见不易。">
-<meta property="og:updated_time" content="2018-03-25T14:10:34.130Z">
+<meta property="og:description" content="工作以来很久没有静下心来学习过了，工作中用到啥也就看啥，也没有系统的全面的整理过点东西。今天就从拿线程开始吧。以后会陆续把之前用到的和之后学到的详细的整理一下。在以后的工作或面试中都会用到的。">
+<meta property="og:image" content="http://yoursite.com/img/timg.jpg">
+<meta property="og:updated_time" content="2018-03-25T14:13:40.998Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="未知的明天，来不及追寻">
-<meta name="twitter:description" content="很喜欢很想和你在一起，有时候很累很想放弃，可是我害怕你真的有那么一点喜欢我，而我自己撒手了，为了那一点不知道存在不存在的喜欢，我一直的等你，遇见不易。">
+<meta name="twitter:title" content="线程 、多线程和线程池">
+<meta name="twitter:description" content="工作以来很久没有静下心来学习过了，工作中用到啥也就看啥，也没有系统的全面的整理过点东西。今天就从拿线程开始吧。以后会陆续把之前用到的和之后学到的详细的整理一下。在以后的工作或面试中都会用到的。">
+<meta name="twitter:image" content="http://yoursite.com/img/timg.jpg">
   
     <link rel="alternative" href="/atom.xml" title="戎码人生" type="application/atom+xml">
   
@@ -150,27 +152,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-未知的明天，来不及追寻" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-线程、多线程和线程池" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      未知的明天，来不及追寻
+      线程 、多线程和线程池
     </h1>
   
 
         
-        <a href="/[object Object]/未知的明天，来不及追寻/" class="archive-article-date">
-  	<time datetime="2018-03-25T10:50:54.408Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
+        <a href="/线程、多线程和线程池/" class="archive-article-date">
+  	<time datetime="2018-03-21T11:20:41.245Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>很喜欢很想和你在一起，有时候很累很想放弃，可是我害怕你真的有那么一点喜欢我，而我自己撒手了，为了那一点不知道存在不存在的喜欢，我一直的等你，遇见不易。</p>
+        <p>工作以来很久没有静下心来学习过了，工作中用到啥也就看啥，也没有系统的全面的整理过点东西。今天就从拿线程开始吧。以后会陆续把之前用到的和之后学到的详细的整理一下。在以后的工作或面试中都会用到的。</p>
+<p><img src="/img/timg.jpg" alt="Alt text"></p>
+<a id="more"></a>
+<p>在这里先列出了一些比较全面的目录，以后的博文中会陆续做出详解，敬请期待…<br><!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 --></p>
+<ul>
+<li><a href="/开启线程的三种方式">开启线程的三种方式？</a>   </li>
+<li><a href="#线程和进程的区别？">线程和进程的区别？</a></li>
+<li><a href="#为什么要有线程，而不是仅仅用进程？">为什么要有线程，而不是仅仅用进程？</a></li>
+<li><a href="#run和start方法区别">run和start方法区别</a></li>
+<li><a href="#如何控制某个方法允许并发访问线程的个数？">如何控制某个方法允许并发访问线程的个数？</a></li>
+<li><a href="#在Java中wait和seelp方法的不同">在Java中wait和seelp方法的不同</a></li>
+<li><a href="#谈谈wait/notify关键字的理解">谈谈wait/notify关键字的理解</a></li>
+<li><a href="#什么导致线程阻塞？">什么导致线程阻塞？</a></li>
+<li><a href="#线程如何关闭？">线程如何关闭？</a></li>
+<li><a href="#讲一下java中的同步的方法">讲一下java中的同步的方法</a></li>
+<li><a href="#数据一致性如何保证？">数据一致性如何保证？</a></li>
+<li><a href="#如何保证线程安全？">如何保证线程安全？</a></li>
+<li><a href="#如何实现线程同步？">如何实现线程同步？</a></li>
+<li><a href="#两个进程同时要求写或者读，能不能实现？如何防止进程的同步？">两个进程同时要求写或者读，能不能实现？如何防止进程的同步？</a></li>
+<li><a href="#线程间操作List">线程间操作List</a></li>
+<li><a href="#Java中对象的生命周期">Java中对象的生命周期</a></li>
+<li><a href="#Synchronized用法">Synchronized用法</a></li>
+<li><a href="#synchronize的原理">synchronize的原理</a></li>
+<li><a href="#谈谈对Synchronized关键字，类锁，方法锁，重入锁的理解">谈谈对Synchronized关键字，类锁，方法锁，重入锁的理解</a></li>
+<li><a href="#static synchronized 方法的多线程访问和作用">static synchronized 方法的多线程访问和作用</a></li>
+<li><a href="#同一个类里面两个synchronized方法，两个线程同时访问的问题">同一个类里面两个synchronized方法，两个线程同时访问的问题</a></li>
+<li><a href="#volatile的原理">volatile的原理</a></li>
+<li><a href="#谈谈volatile关键字的用法">谈谈volatile关键字的用法</a></li>
+<li><a href="#谈谈volatile关键字的作用">谈谈volatile关键字的作用</a></li>
+<li><a href="#谈谈NIO的理解">谈谈NIO的理解</a></li>
+<li><a href="#synchronized 和volatile 关键字的区别">synchronized 和volatile 关键字的区别</a></li>
+<li><a href="#synchronized与Lock的区别">synchronized与Lock的区别</a></li>
+<li><a href="#ReentrantLock 、synchronized和volatile比较">ReentrantLock 、synchronized和volatile比较</a></li>
+<li><a href="#ReentrantLock的内部实现">ReentrantLock的内部实现</a></li>
+<li><a href="#lock原理">lock原理</a></li>
+<li><a href="#死锁的四个必要条件？">死锁的四个必要条件？</a></li>
+<li><a href="#怎么避免死锁？">怎么避免死锁？</a></li>
+<li><a href="#对象锁和类锁是否会互相影响？">对象锁和类锁是否会互相影响？</a></li>
+<li><a href="#什么是线程池，如何使用?">什么是线程池，如何使用?</a></li>
+<li><a href="#Java的并发、多线程、线程模型">Java的并发、多线程、线程模型</a></li>
+<li><a href="#谈谈对多线程的理解">谈谈对多线程的理解</a></li>
+<li><a href="#多线程有什么要注意的问题？">多线程有什么要注意的问题？</a></li>
+<li><a href="#谈谈你对并发编程的理解并举例说明">谈谈你对并发编程的理解并举例说明</a></li>
+<li><a href="#如何保证多线程读写文件的安全？">如何保证多线程读写文件的安全？</a></li>
+<li><a href="#断点续传的实现">断点续传的实现</a></li>
+</ul>
+<!-- /MDTOC -->
 
       
 
@@ -210,7 +258,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">线程</a>
         		</li>
       		
 		</ul>
@@ -266,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/[object Object]/未知的明天，来不及追寻/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/线程、多线程和线程池/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,20 +328,15 @@
   
 <nav id="article-nav">
   
-    <a href="/[object Object]/开启线程的三种方式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/欢迎做客我的博客园/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          开启线程的三种方式
+          前言
         
       </div>
     </a>
   
-  
-    <a href="/[object Object]/I LOVE U/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">I love u</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -321,7 +364,7 @@
   
 
   
-  <div id="SOHUCS" sid="未知的明天，来不及追寻" ></div> 
+  <div id="SOHUCS" sid="线程、多线程和线程池" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
