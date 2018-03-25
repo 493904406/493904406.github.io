@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>前言 | 戎码人生</title>
+  <title>线程和进程的区别 | 戎码人生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实早在这之前我就一直想过写博客,但由于种种原因一直没有去学习这方面的知识,最近一周来(从开始动手到搭建好)一直陆陆续续的在着手这方面的工作。从开始到搭建完成的过程中遇到了很多困难，因为在这之前对Github了解的不是很多导致满头雾水,不断的跳进一个又一个坑,甚至想过放弃.但最后结果想必都知道了。 那么我为什么要建立自己的博客？1.“提高将事情讲清楚的能力”在写博客之前你需要花更多的时间来表达出你">
+  <meta name="description" content="1、定义进程：具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独立单位。 线程：进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位.线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。 2、关系一个线程可以创建和撤销另一个">
+<meta name="keywords" content="线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前言">
-<meta property="og:url" content="http://yoursite.com/2018/03/21/欢迎做客我的博客园/index.html">
+<meta property="og:title" content="线程和进程的区别">
+<meta property="og:url" content="http://yoursite.com/[object Object]/线程和进程的区别/index.html">
 <meta property="og:site_name" content="戎码人生">
-<meta property="og:description" content="其实早在这之前我就一直想过写博客,但由于种种原因一直没有去学习这方面的知识,最近一周来(从开始动手到搭建好)一直陆陆续续的在着手这方面的工作。从开始到搭建完成的过程中遇到了很多困难，因为在这之前对Github了解的不是很多导致满头雾水,不断的跳进一个又一个坑,甚至想过放弃.但最后结果想必都知道了。 那么我为什么要建立自己的博客？1.“提高将事情讲清楚的能力”在写博客之前你需要花更多的时间来表达出你">
-<meta property="og:updated_time" content="2018-03-25T02:56:04.331Z">
+<meta property="og:description" content="1、定义进程：具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独立单位。 线程：进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位.线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。 2、关系一个线程可以创建和撤销另一个">
+<meta property="og:updated_time" content="2018-03-25T14:08:32.227Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前言">
-<meta name="twitter:description" content="其实早在这之前我就一直想过写博客,但由于种种原因一直没有去学习这方面的知识,最近一周来(从开始动手到搭建好)一直陆陆续续的在着手这方面的工作。从开始到搭建完成的过程中遇到了很多困难，因为在这之前对Github了解的不是很多导致满头雾水,不断的跳进一个又一个坑,甚至想过放弃.但最后结果想必都知道了。 那么我为什么要建立自己的博客？1.“提高将事情讲清楚的能力”在写博客之前你需要花更多的时间来表达出你">
+<meta name="twitter:title" content="线程和进程的区别">
+<meta name="twitter:description" content="1、定义进程：具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独立单位。 线程：进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位.线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。 2、关系一个线程可以创建和撤销另一个">
   
     <link rel="alternative" href="/atom.xml" title="戎码人生" type="application/atom+xml">
   
@@ -149,35 +150,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-欢迎做客我的博客园" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-线程和进程的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      前言
+      线程和进程的区别
     </h1>
   
 
         
-        <a href="/2018/03/21/欢迎做客我的博客园/" class="archive-article-date">
-  	<time datetime="2018-03-21T11:20:41.253Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+        <a href="/[object Object]/线程和进程的区别/" class="archive-article-date">
+  	<time datetime="2018-03-25T13:49:51.158Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>其实早在这之前我就一直想过写博客,但由于种种原因一直没有去学习这方面的知识,最近一周来(从开始动手到搭建好)一直陆陆续续的在着手这方面的工作。从开始到搭建完成的过程中遇到了很多困难，因为在这之前对Github了解的不是很多导致满头雾水,不断的跳进一个又一个坑,甚至想过放弃.但最后结果想必都知道了。</p>
-<h2 id="那么我为什么要建立自己的博客？"><a href="#那么我为什么要建立自己的博客？" class="headerlink" title="那么我为什么要建立自己的博客？"></a>那么我为什么要建立自己的博客？</h2><h3 id="1-“提高将事情讲清楚的能力”"><a href="#1-“提高将事情讲清楚的能力”" class="headerlink" title="1.“提高将事情讲清楚的能力”"></a>1.“提高将事情讲清楚的能力”</h3><p>在写博客之前你需要花更多的时间来表达出你的想法，表达你想法之前你得先对你要表达的东西充分理解并理清思路和逻辑。</p>
-<p>很多东西你以为懂了，但当你在写下来的时候，你就觉得无从下手了。</p>
+        <p>1、定义<br>进程：具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独立单位。</p>
+<p>线程：进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位.线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。</p>
+<p>2、关系<br>一个线程可以创建和撤销另一个线程;同一个进程中的多个线程之间可以并发执行.</p>
+<p>相对进程而言，线程是一个更加接近于执行体的概念，它可以与同进程中的其他线程共享数据，但拥有自己的栈空间，拥有独立的执行序列。</p>
 <a id="more"></a>
-<h3 id="2-分享带来的连锁反应"><a href="#2-分享带来的连锁反应" class="headerlink" title="2.分享带来的连锁反应"></a>2.分享带来的连锁反应</h3><p>“通过分享，你获得了直接而快速的回报，你最终或许会发现你已将版权和“保留所有权利”抛诸脑后。新的经济学准则是：参与你作品的人越多，回报越高。在分享主义里，如果你愿意你可以保留所有权，但是我乐于分享。”</p>
-<p>———— 毛向辉 《分享主义：一场思维革命》</p>
-<h3 id="3-记录成长"><a href="#3-记录成长" class="headerlink" title="3.记录成长"></a>3.记录成长</h3><p>我们每个人都应该有这样的经历:隔了很久我们回头看看以前的自己会发现特别傻x,但正是因为这些傻x的岁月让我们不断成长,你在成长的过程中不断的修正自己的错误。</p>
-<h3 id="4-探索未知的世界"><a href="#4-探索未知的世界" class="headerlink" title="4.探索未知的世界"></a>4.探索未知的世界</h3><p>世界不止是你的家，你的公司，你的朋友圈，你应该去发现一个更大的世界，通过写博客，你会知道世界上还有很多人像你一样在写博客，这些人和知识正在世界的某个角落在等着你。</p>
-<h3 id="5-帮助更多想要获取帮助的人"><a href="#5-帮助更多想要获取帮助的人" class="headerlink" title="5.帮助更多想要获取帮助的人"></a>5.帮助更多想要获取帮助的人</h3><p>这点我相信大家由为感触,在你探索一个未知的知识领域的时候,往往被撞的一鼻子灰.幸运的人很快就能找到一个“师傅”或一篇很好的文章,但大多数往往在找“教程”的过程中就已经放弃了.因为他们没能够找到刚好理解的文章。</p>
+<p>3、区别</p>
+<p>　　进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响，而线程只是一个进程中的不同执行路径。线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉，所以多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些。但对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程。</p>
+<p>1) 简而言之,一个程序至少有一个进程,一个进程至少有一个线程.</p>
+<p>2) 线程的划分尺度小于进程，使得多线程程序的并发性高。</p>
+<p>3) 另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。</p>
+<p>4) 线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。</p>
+<p>5) 从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。</p>
+<p>4.优缺点</p>
+<p>线程和进程在使用上各有优缺点：</p>
+<p>线程执行开销小，但不利于资源的管理和保护；</p>
+<p>而进程正相反。</p>
+<p>同时，线程适合于在SMP机器上运行，而进程则可以跨机器迁移。</p>
+<p>（SMP：SMP的全称是”对称多处理”（Symmetrical Multi-Processing）技术，是指在一个计算机上汇集了一组处理器(多CPU),各CPU之间共享内存子系统以及总线结构。）</p>
 
       
 
@@ -212,6 +222,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">线程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -262,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/03/21/欢迎做客我的博客园/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/[object Object]/线程和进程的区别/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +297,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/22/权限管理安全框架的比较/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/[object Object]/为什么要有线程，而不是仅仅用进程/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          权限管理安全框架的比较
+          为什么要有线程，而不是仅仅用进程
         
       </div>
     </a>
   
   
-    <a href="/2018/03/21/线程、多线程和线程池/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">线程 、多线程和线程池</div>
+    <a href="/[object Object]/开启线程的三种方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开启线程的三种方式</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -317,7 +338,7 @@
   
 
   
-  <div id="SOHUCS" sid="欢迎做客我的博客园" ></div> 
+  <div id="SOHUCS" sid="线程和进程的区别" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
