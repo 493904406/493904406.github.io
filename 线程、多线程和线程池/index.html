@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="戎码人生">
 <meta property="og:description" content="工作以来很久没有静下心来学习过了，工作中用到啥也就看啥，也没有系统的全面的整理过点东西。今天就从拿线程开始吧。以后会陆续把之前用到的和之后学到的详细的整理一下。在以后的工作或面试中都会用到的。">
 <meta property="og:image" content="http://yoursite.com/img/timg.jpg">
-<meta property="og:updated_time" content="2018-03-25T14:13:40.998Z">
+<meta property="og:updated_time" content="2018-03-25T14:20:08.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线程 、多线程和线程池">
 <meta name="twitter:description" content="工作以来很久没有静下心来学习过了，工作中用到啥也就看啥，也没有系统的全面的整理过点东西。今天就从拿线程开始吧。以后会陆续把之前用到的和之后学到的详细的整理一下。在以后的工作或面试中都会用到的。">
@@ -178,45 +178,45 @@
 <p>在这里先列出了一些比较全面的目录，以后的博文中会陆续做出详解，敬请期待…<br><!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 --></p>
 <ul>
 <li><a href="/开启线程的三种方式">开启线程的三种方式？</a>   </li>
-<li><a href="#线程和进程的区别？">线程和进程的区别？</a></li>
-<li><a href="#为什么要有线程，而不是仅仅用进程？">为什么要有线程，而不是仅仅用进程？</a></li>
-<li><a href="#run和start方法区别">run和start方法区别</a></li>
-<li><a href="#如何控制某个方法允许并发访问线程的个数？">如何控制某个方法允许并发访问线程的个数？</a></li>
-<li><a href="#在Java中wait和seelp方法的不同">在Java中wait和seelp方法的不同</a></li>
-<li><a href="#谈谈wait/notify关键字的理解">谈谈wait/notify关键字的理解</a></li>
-<li><a href="#什么导致线程阻塞？">什么导致线程阻塞？</a></li>
-<li><a href="#线程如何关闭？">线程如何关闭？</a></li>
-<li><a href="#讲一下java中的同步的方法">讲一下java中的同步的方法</a></li>
-<li><a href="#数据一致性如何保证？">数据一致性如何保证？</a></li>
-<li><a href="#如何保证线程安全？">如何保证线程安全？</a></li>
-<li><a href="#如何实现线程同步？">如何实现线程同步？</a></li>
-<li><a href="#两个进程同时要求写或者读，能不能实现？如何防止进程的同步？">两个进程同时要求写或者读，能不能实现？如何防止进程的同步？</a></li>
-<li><a href="#线程间操作List">线程间操作List</a></li>
-<li><a href="#Java中对象的生命周期">Java中对象的生命周期</a></li>
-<li><a href="#Synchronized用法">Synchronized用法</a></li>
-<li><a href="#synchronize的原理">synchronize的原理</a></li>
-<li><a href="#谈谈对Synchronized关键字，类锁，方法锁，重入锁的理解">谈谈对Synchronized关键字，类锁，方法锁，重入锁的理解</a></li>
-<li><a href="#static synchronized 方法的多线程访问和作用">static synchronized 方法的多线程访问和作用</a></li>
-<li><a href="#同一个类里面两个synchronized方法，两个线程同时访问的问题">同一个类里面两个synchronized方法，两个线程同时访问的问题</a></li>
-<li><a href="#volatile的原理">volatile的原理</a></li>
-<li><a href="#谈谈volatile关键字的用法">谈谈volatile关键字的用法</a></li>
-<li><a href="#谈谈volatile关键字的作用">谈谈volatile关键字的作用</a></li>
-<li><a href="#谈谈NIO的理解">谈谈NIO的理解</a></li>
-<li><a href="#synchronized 和volatile 关键字的区别">synchronized 和volatile 关键字的区别</a></li>
-<li><a href="#synchronized与Lock的区别">synchronized与Lock的区别</a></li>
-<li><a href="#ReentrantLock 、synchronized和volatile比较">ReentrantLock 、synchronized和volatile比较</a></li>
-<li><a href="#ReentrantLock的内部实现">ReentrantLock的内部实现</a></li>
-<li><a href="#lock原理">lock原理</a></li>
-<li><a href="#死锁的四个必要条件？">死锁的四个必要条件？</a></li>
-<li><a href="#怎么避免死锁？">怎么避免死锁？</a></li>
-<li><a href="#对象锁和类锁是否会互相影响？">对象锁和类锁是否会互相影响？</a></li>
-<li><a href="#什么是线程池，如何使用?">什么是线程池，如何使用?</a></li>
-<li><a href="#Java的并发、多线程、线程模型">Java的并发、多线程、线程模型</a></li>
-<li><a href="#谈谈对多线程的理解">谈谈对多线程的理解</a></li>
-<li><a href="#多线程有什么要注意的问题？">多线程有什么要注意的问题？</a></li>
-<li><a href="#谈谈你对并发编程的理解并举例说明">谈谈你对并发编程的理解并举例说明</a></li>
-<li><a href="#如何保证多线程读写文件的安全？">如何保证多线程读写文件的安全？</a></li>
-<li><a href="#断点续传的实现">断点续传的实现</a></li>
+<li><a href="/线程和进程的区别">线程和进程的区别？</a></li>
+<li><a href="/为什么要有线程，而不是仅仅用进程">为什么要有线程，而不是仅仅用进程？</a></li>
+<li><a href="/run和start方法区别">run和start方法区别</a></li>
+<li><a href="/如何控制某个方法允许并发访问线程的个数">如何控制某个方法允许并发访问线程的个数？</a></li>
+<li><a href="/在Java中wait和seelp方法的不同">在Java中wait和seelp方法的不同</a></li>
+<li><a href="/谈谈wait/notify关键字的理解">谈谈wait/notify关键字的理解</a></li>
+<li><a href="/什么导致线程阻塞？">什么导致线程阻塞？</a></li>
+<li><a href="/线程如何关闭？">线程如何关闭？</a></li>
+<li><a href="/讲一下java中的同步的方法">讲一下java中的同步的方法</a></li>
+<li><a href="/数据一致性如何保证？">数据一致性如何保证？</a></li>
+<li><a href="/如何保证线程安全？">如何保证线程安全？</a></li>
+<li><a href="/如何实现线程同步？">如何实现线程同步？</a></li>
+<li><a href="/两个进程同时要求写或者读，能不能实现？如何防止进程的同步？">两个进程同时要求写或者读，能不能实现？如何防止进程的同步？</a></li>
+<li><a href="/线程间操作List">线程间操作List</a></li>
+<li><a href="/Java中对象的生命周期">Java中对象的生命周期</a></li>
+<li><a href="/Synchronized用法">Synchronized用法</a></li>
+<li><a href="/synchronize的原理">synchronize的原理</a></li>
+<li><a href="/谈谈对Synchronized关键字，类锁，方法锁，重入锁的理解">谈谈对Synchronized关键字，类锁，方法锁，重入锁的理解</a></li>
+<li><a href="/static synchronized 方法的多线程访问和作用">static synchronized 方法的多线程访问和作用</a></li>
+<li><a href="/同一个类里面两个synchronized方法，两个线程同时访问的问题">同一个类里面两个synchronized方法，两个线程同时访问的问题</a></li>
+<li><a href="/volatile的原理">volatile的原理</a></li>
+<li><a href="/谈谈volatile关键字的用法">谈谈volatile关键字的用法</a></li>
+<li><a href="/谈谈volatile关键字的作用">谈谈volatile关键字的作用</a></li>
+<li><a href="/谈谈NIO的理解">谈谈NIO的理解</a></li>
+<li><a href="/synchronized 和volatile 关键字的区别">synchronized 和volatile 关键字的区别</a></li>
+<li><a href="/synchronized与Lock的区别">synchronized与Lock的区别</a></li>
+<li><a href="/ReentrantLock 、synchronized和volatile比较">ReentrantLock 、synchronized和volatile比较</a></li>
+<li><a href="/ReentrantLock的内部实现">ReentrantLock的内部实现</a></li>
+<li><a href="/lock原理">lock原理</a></li>
+<li><a href="/死锁的四个必要条件？">死锁的四个必要条件？</a></li>
+<li><a href="/怎么避免死锁？">怎么避免死锁？</a></li>
+<li><a href="/对象锁和类锁是否会互相影响？">对象锁和类锁是否会互相影响？</a></li>
+<li><a href="/什么是线程池，如何使用?">什么是线程池，如何使用?</a></li>
+<li><a href="/Java的并发、多线程、线程模型">Java的并发、多线程、线程模型</a></li>
+<li><a href="/谈谈对多线程的理解">谈谈对多线程的理解</a></li>
+<li><a href="/多线程有什么要注意的问题？">多线程有什么要注意的问题？</a></li>
+<li><a href="/谈谈你对并发编程的理解并举例说明">谈谈你对并发编程的理解并举例说明</a></li>
+<li><a href="/如何保证多线程读写文件的安全？">如何保证多线程读写文件的安全？</a></li>
+<li><a href="/断点续传的实现">断点续传的实现</a></li>
 </ul>
 <!-- /MDTOC -->
 
@@ -470,11 +470,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">线程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">线程</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
