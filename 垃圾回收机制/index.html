@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>前言 | 戎码人生</title>
+  <title>垃圾回收机制 | 戎码人生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实早在这之前我就一直想过写博客,但由于种种原因一直没有去学习这方面的知识,最近一周来(从开始动手到搭建好)一直陆陆续续的在着手这方面的工作。从开始到搭建完成的过程中遇到了很多困难，因为在这之前对Github了解的不是很多导致满头雾水,不断的跳进一个又一个坑,甚至想过放弃.但最后结果想必都知道了。 那么我为什么要建立自己的博客？1.“提高将事情讲清楚的能力”在写博客之前你需要花更多的时间来表达出你">
+  <meta name="description" content="对象引用Java中的垃圾回收一般是在Java堆中进行，因为堆中几乎存放了Java中所有的对象实例。谈到Java堆中的垃圾回收，自然要谈到引用。在JDK1.2之前，Java中的引用定义很很纯粹：如果reference类型的数据中存储的数值代表的是另外一块内存的起始地址，就称这块内存代表着一个引用。但在JDK1.2之后，Java对引用的概念进行了扩充，将其分为 强引用（Strong Reference">
+<meta name="keywords" content="JVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前言">
-<meta property="og:url" content="http://yoursite.com/欢迎做客我的博客园/index.html">
+<meta property="og:title" content="垃圾回收机制">
+<meta property="og:url" content="http://yoursite.com/垃圾回收机制/index.html">
 <meta property="og:site_name" content="戎码人生">
-<meta property="og:description" content="其实早在这之前我就一直想过写博客,但由于种种原因一直没有去学习这方面的知识,最近一周来(从开始动手到搭建好)一直陆陆续续的在着手这方面的工作。从开始到搭建完成的过程中遇到了很多困难，因为在这之前对Github了解的不是很多导致满头雾水,不断的跳进一个又一个坑,甚至想过放弃.但最后结果想必都知道了。 那么我为什么要建立自己的博客？1.“提高将事情讲清楚的能力”在写博客之前你需要花更多的时间来表达出你">
-<meta property="og:updated_time" content="2018-03-25T02:56:04.331Z">
+<meta property="og:description" content="对象引用Java中的垃圾回收一般是在Java堆中进行，因为堆中几乎存放了Java中所有的对象实例。谈到Java堆中的垃圾回收，自然要谈到引用。在JDK1.2之前，Java中的引用定义很很纯粹：如果reference类型的数据中存储的数值代表的是另外一块内存的起始地址，就称这块内存代表着一个引用。但在JDK1.2之后，Java对引用的概念进行了扩充，将其分为 强引用（Strong Reference">
+<meta property="og:updated_time" content="2018-03-28T14:36:54.206Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前言">
-<meta name="twitter:description" content="其实早在这之前我就一直想过写博客,但由于种种原因一直没有去学习这方面的知识,最近一周来(从开始动手到搭建好)一直陆陆续续的在着手这方面的工作。从开始到搭建完成的过程中遇到了很多困难，因为在这之前对Github了解的不是很多导致满头雾水,不断的跳进一个又一个坑,甚至想过放弃.但最后结果想必都知道了。 那么我为什么要建立自己的博客？1.“提高将事情讲清楚的能力”在写博客之前你需要花更多的时间来表达出你">
+<meta name="twitter:title" content="垃圾回收机制">
+<meta name="twitter:description" content="对象引用Java中的垃圾回收一般是在Java堆中进行，因为堆中几乎存放了Java中所有的对象实例。谈到Java堆中的垃圾回收，自然要谈到引用。在JDK1.2之前，Java中的引用定义很很纯粹：如果reference类型的数据中存储的数值代表的是另外一块内存的起始地址，就称这块内存代表着一个引用。但在JDK1.2之后，Java对引用的概念进行了扩充，将其分为 强引用（Strong Reference">
   
     <link rel="alternative" href="/atom.xml" title="戎码人生" type="application/atom+xml">
   
@@ -149,35 +150,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-欢迎做客我的博客园" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-垃圾回收机制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      前言
+      垃圾回收机制
     </h1>
   
 
         
-        <a href="/欢迎做客我的博客园/" class="archive-article-date">
-  	<time datetime="2018-03-21T11:20:41.253Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+        <a href="/垃圾回收机制/" class="archive-article-date">
+  	<time datetime="2018-03-28T14:30:53.607Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>其实早在这之前我就一直想过写博客,但由于种种原因一直没有去学习这方面的知识,最近一周来(从开始动手到搭建好)一直陆陆续续的在着手这方面的工作。从开始到搭建完成的过程中遇到了很多困难，因为在这之前对Github了解的不是很多导致满头雾水,不断的跳进一个又一个坑,甚至想过放弃.但最后结果想必都知道了。</p>
-<h2 id="那么我为什么要建立自己的博客？"><a href="#那么我为什么要建立自己的博客？" class="headerlink" title="那么我为什么要建立自己的博客？"></a>那么我为什么要建立自己的博客？</h2><h3 id="1-“提高将事情讲清楚的能力”"><a href="#1-“提高将事情讲清楚的能力”" class="headerlink" title="1.“提高将事情讲清楚的能力”"></a>1.“提高将事情讲清楚的能力”</h3><p>在写博客之前你需要花更多的时间来表达出你的想法，表达你想法之前你得先对你要表达的东西充分理解并理清思路和逻辑。</p>
-<p>很多东西你以为懂了，但当你在写下来的时候，你就觉得无从下手了。</p>
-<a id="more"></a>
-<h3 id="2-分享带来的连锁反应"><a href="#2-分享带来的连锁反应" class="headerlink" title="2.分享带来的连锁反应"></a>2.分享带来的连锁反应</h3><p>“通过分享，你获得了直接而快速的回报，你最终或许会发现你已将版权和“保留所有权利”抛诸脑后。新的经济学准则是：参与你作品的人越多，回报越高。在分享主义里，如果你愿意你可以保留所有权，但是我乐于分享。”</p>
-<p>———— 毛向辉 《分享主义：一场思维革命》</p>
-<h3 id="3-记录成长"><a href="#3-记录成长" class="headerlink" title="3.记录成长"></a>3.记录成长</h3><p>我们每个人都应该有这样的经历:隔了很久我们回头看看以前的自己会发现特别傻x,但正是因为这些傻x的岁月让我们不断成长,你在成长的过程中不断的修正自己的错误。</p>
-<h3 id="4-探索未知的世界"><a href="#4-探索未知的世界" class="headerlink" title="4.探索未知的世界"></a>4.探索未知的世界</h3><p>世界不止是你的家，你的公司，你的朋友圈，你应该去发现一个更大的世界，通过写博客，你会知道世界上还有很多人像你一样在写博客，这些人和知识正在世界的某个角落在等着你。</p>
-<h3 id="5-帮助更多想要获取帮助的人"><a href="#5-帮助更多想要获取帮助的人" class="headerlink" title="5.帮助更多想要获取帮助的人"></a>5.帮助更多想要获取帮助的人</h3><p>这点我相信大家由为感触,在你探索一个未知的知识领域的时候,往往被撞的一鼻子灰.幸运的人很快就能找到一个“师傅”或一篇很好的文章,但大多数往往在找“教程”的过程中就已经放弃了.因为他们没能够找到刚好理解的文章。</p>
+        <h3 id="对象引用"><a href="#对象引用" class="headerlink" title="对象引用"></a>对象引用</h3><p>Java中的垃圾回收一般是在Java堆中进行，因为堆中几乎存放了Java中所有的对象实例。谈到Java堆中的垃圾回收，自然要谈到引用。在JDK1.2之前，Java中的引用定义很很纯粹：如果reference类型的数据中存储的数值代表的是另外一块内存的起始地址，就称这块内存代表着一个引用。但在JDK1.2之后，Java对引用的概念进行了扩充，将其分为 <strong>强引用（Strong Reference）、软引用（Soft Reference）、弱引用（Weak Reference）、虚引用（Phantom Reference）</strong>四种，引用强度依次减弱</p>
 
       
 
@@ -212,6 +205,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -262,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/欢迎做客我的博客园/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/垃圾回收机制/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +280,9 @@
   
 <nav id="article-nav">
   
-    <a href="/权限管理安全框架的比较/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          权限管理安全框架的比较
-        
-      </div>
-    </a>
   
-  
-    <a href="/线程、多线程和线程池/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">线程 、多线程和线程池</div>
+    <a href="/线程阻塞/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">线程的阻塞</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -317,7 +312,7 @@
   
 
   
-  <div id="SOHUCS" sid="欢迎做客我的博客园" ></div> 
+  <div id="SOHUCS" sid="垃圾回收机制" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
