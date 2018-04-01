@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>为什么要有线程，而不是仅仅用进程 | 戎码人生</title>
+  <title>java内存区域与内存溢出 | 戎码人生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、进程有很多优点，它提供了多道编程，让我们感觉我们每个人都拥有自己的CPU和其他资源，可以提高计算机的利用率。很多人就不理解了，既然进程这么优秀，为什么还要线程呢？其实，仔细观察就会发现进程还是有很多缺陷的，主要体现在两点上： 进程只能在一个时间干一件事，如果想同时干两件事或多件事，进程就无能为力了。 进程在执行的过程中如果阻塞，例如等待输入，整个进程就会挂起，即使进程中有些工作不依赖于输入的数">
-<meta name="keywords" content="Java,线程">
+  <meta name="description" content="未完待续。。。">
+<meta name="keywords" content="Java,JVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为什么要有线程，而不是仅仅用进程">
-<meta property="og:url" content="http://yoursite.com/为什么要有线程，而不是仅仅用进程/index.html">
+<meta property="og:title" content="java内存区域与内存溢出">
+<meta property="og:url" content="http://yoursite.com/java内存区域与内存溢出/index.html">
 <meta property="og:site_name" content="戎码人生">
-<meta property="og:description" content="1、进程有很多优点，它提供了多道编程，让我们感觉我们每个人都拥有自己的CPU和其他资源，可以提高计算机的利用率。很多人就不理解了，既然进程这么优秀，为什么还要线程呢？其实，仔细观察就会发现进程还是有很多缺陷的，主要体现在两点上： 进程只能在一个时间干一件事，如果想同时干两件事或多件事，进程就无能为力了。 进程在执行的过程中如果阻塞，例如等待输入，整个进程就会挂起，即使进程中有些工作不依赖于输入的数">
-<meta property="og:updated_time" content="2018-04-01T02:48:33.351Z">
+<meta property="og:description" content="未完待续。。。">
+<meta property="og:updated_time" content="2018-04-01T04:36:27.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为什么要有线程，而不是仅仅用进程">
-<meta name="twitter:description" content="1、进程有很多优点，它提供了多道编程，让我们感觉我们每个人都拥有自己的CPU和其他资源，可以提高计算机的利用率。很多人就不理解了，既然进程这么优秀，为什么还要线程呢？其实，仔细观察就会发现进程还是有很多缺陷的，主要体现在两点上： 进程只能在一个时间干一件事，如果想同时干两件事或多件事，进程就无能为力了。 进程在执行的过程中如果阻塞，例如等待输入，整个进程就会挂起，即使进程中有些工作不依赖于输入的数">
+<meta name="twitter:title" content="java内存区域与内存溢出">
+<meta name="twitter:description" content="未完待续。。。">
   
     <link rel="alternative" href="/atom.xml" title="戎码人生" type="application/atom+xml">
   
@@ -153,32 +153,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-为什么要有线程，而不是仅仅用进程" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java内存区域与内存溢出" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      为什么要有线程，而不是仅仅用进程
+      java内存区域与内存溢出
     </h1>
   
 
         
-        <a href="/为什么要有线程，而不是仅仅用进程/" class="archive-article-date">
-  	<time datetime="2018-03-25T13:52:12.525Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
+        <a href="/java内存区域与内存溢出/" class="archive-article-date">
+  	<time datetime="2018-04-01T04:34:59.406Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、进程有很多优点，它提供了多道编程，让我们感觉我们每个人都拥有自己的CPU和其他资源，可以提高计算机的利用率。很多人就不理解了，既然进程这么优秀，为什么还要线程呢？其实，仔细观察就会发现进程还是有很多缺陷的，主要体现在两点上：</p>
-<p>进程只能在一个时间干一件事，如果想同时干两件事或多件事，进程就无能为力了。</p>
-<p>进程在执行的过程中如果阻塞，例如等待输入，整个进程就会挂起，即使进程中有些工作不依赖于输入的数据，也将无法执行。</p>
-<a id="more"></a>
-<p>如果这两个缺点理解比较困难的话，举个现实的例子也许你就清楚了：如果把我们上课的过程看成一个进程的话，那么我们要做的是耳朵听老师讲课，手上还要记笔记，脑子还要思考问题，这样才能高效的完成听课的任务。而如果只提供进程这个机制的话，上面这三件事将不能同时执行，同一时间只能做一件事，听的时候就不能记笔记，也不能用脑子思考，这是其一；如果老师在黑板上写演算过程，我们开始记笔记，而老师突然有一步推不下去了，阻塞住了，他在那边思考着，而我们呢，也不能干其他事，即使你想趁此时思考一下刚才没听懂的一个问题都不行，这是其二。</p>
-<p>现在你应该明白了进程的缺陷了，而解决的办法很简单，我们完全可以让听、写、思三个独立的过程，并行起来，这样很明显可以提高听课的效率。而实际的操作系统中，也同样引入了这种类似的机制——线程。</p>
+        <p>未完待续。。。</p>
 
       
 
@@ -222,7 +217,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">线程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
         		</li>
       		
 		</ul>
@@ -278,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/为什么要有线程，而不是仅仅用进程/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/java内存区域与内存溢出/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,18 +287,9 @@
   
 <nav id="article-nav">
   
-    <a href="/run()和start()方法区别/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          run和start方法区别
-        
-      </div>
-    </a>
   
-  
-    <a href="/线程和进程的区别/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">线程和进程的区别</div>
+    <a href="/美丽新世界/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">美丽新世界</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -333,7 +319,7 @@
   
 
   
-  <div id="SOHUCS" sid="为什么要有线程，而不是仅仅用进程" ></div> 
+  <div id="SOHUCS" sid="java内存区域与内存溢出" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
