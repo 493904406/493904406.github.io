@@ -150,6 +150,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-run()和start()方法区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/run()和start()方法区别/">run和start方法区别</a>
+    </h1>
+  
+
+        
+        <a href="/run()和start()方法区别/" class="archive-article-date">
+  	<time datetime="2018-03-25T13:53:49.255Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
+</a>
+        
+        <span id="busuanzi_container_page_pv">
+       本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1） start：</p>
+<p>用start方法来启动线程，真正实现了多线程运行，这时无需等待run方法体代码执行完毕而直接继续执行下面的代码。通过调用Thread类的 start()方法来启动一个线程，这时此线程处于就绪（可运行）状态，并没有运行，一旦得到cpu时间片，就开始执行run()方法，这里方法 run()称为线程体，它包含了要执行的这个线程的内容，Run方法运行结束，此线程随即终止。</p>
+        
+          <a class="article-more-a" href="/run()和start()方法区别/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">线程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/run()和start()方法区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-为什么要有线程，而不是仅仅用进程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -717,35 +801,7 @@
       </div>
       <footer id="footer">
   <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <link href="css/default.css" tppabs="./css/default.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.js" tppabs="./js/jquery.js"></script>
-	<script type="text/javascript" src="js/garden.js" tppabs="./js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js" tppabs="./js/functions.js"></script>
-  <script>
-(function() {
-    function snow(left, height, src) {
-        var div = document.createElement("div");
-        var img = document.createElement("img");
-        div.appendChild(img);
-        img.className = "roll";
-        img.src = src;
-        div.style.left = left + "px";
-        div.style.height = height + "px";
-        div.className = "div";
-        document.getElementById("snowzone").appendChild(div);
-        setTimeout(function() {
-            document.getElementById("snowzone").removeChild(div);
-            // console.log(window.innerHeight);
-        }, 5000);
-    }
-    setInterval(function() {
-        var left = Math.random() * window.innerWidth;
-        var height = Math.random() * window.innerHeight;
-        var src = "/img/s" + Math.floor(Math.random() * 2 + 1) + ".png"; //两张图片分别为"s1.png"、"s2.png"
-        snow(left, height, src);
-    }, 500);
-})();
-</script>
+
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -840,11 +896,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">miss you</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color3">线程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -852,7 +912,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">线程</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">

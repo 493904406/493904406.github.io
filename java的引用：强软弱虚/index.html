@@ -9,7 +9,7 @@
   <title>java中的引用：强软弱虚 | 戎码人生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言之前一直都在用引用，但是都是浅尝辄止，没有系统的接触过这一块，最近看到垃圾回收机制觉得有必要详细的过一遍了，干脆把这一块的东西整理一下。">
-<meta name="keywords" content="Java,JVM,引用">
+<meta name="keywords" content="Java,引用,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java中的引用：强软弱虚">
 <meta property="og:url" content="http://yoursite.com/java的引用：强软弱虚/index.html">
@@ -242,11 +242,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">引用</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">引用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
         		</li>
       		
 		</ul>
@@ -378,35 +378,7 @@
       </div>
       <footer id="footer">
   <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <link href="css/default.css" tppabs="./css/default.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.js" tppabs="./js/jquery.js"></script>
-	<script type="text/javascript" src="js/garden.js" tppabs="./js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js" tppabs="./js/functions.js"></script>
-  <script>
-(function() {
-    function snow(left, height, src) {
-        var div = document.createElement("div");
-        var img = document.createElement("img");
-        div.appendChild(img);
-        img.className = "roll";
-        img.src = src;
-        div.style.left = left + "px";
-        div.style.height = height + "px";
-        div.className = "div";
-        document.getElementById("snowzone").appendChild(div);
-        setTimeout(function() {
-            document.getElementById("snowzone").removeChild(div);
-            // console.log(window.innerHeight);
-        }, 5000);
-    }
-    setInterval(function() {
-        var left = Math.random() * window.innerWidth;
-        var height = Math.random() * window.innerHeight;
-        var src = "/img/s" + Math.floor(Math.random() * 2 + 1) + ".png"; //两张图片分别为"s1.png"、"s2.png"
-        snow(left, height, src);
-    }, 500);
-})();
-</script>
+
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -501,11 +473,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">miss you</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color3">线程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,7 +489,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">线程</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
