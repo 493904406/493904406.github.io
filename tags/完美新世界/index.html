@@ -213,7 +213,35 @@
       </div>
       <footer id="footer">
   <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  <link href="css/default.css" tppabs="./css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js" tppabs="./js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js" tppabs="./js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js" tppabs="./js/functions.js"></script>
+  <script>
+(function() {
+    function snow(left, height, src) {
+        var div = document.createElement("div");
+        var img = document.createElement("img");
+        div.appendChild(img);
+        img.className = "roll";
+        img.src = src;
+        div.style.left = left + "px";
+        div.style.height = height + "px";
+        div.className = "div";
+        document.getElementById("snowzone").appendChild(div);
+        setTimeout(function() {
+            document.getElementById("snowzone").removeChild(div);
+            // console.log(window.innerHeight);
+        }, 5000);
+    }
+    setInterval(function() {
+        var left = Math.random() * window.innerWidth;
+        var height = Math.random() * window.innerHeight;
+        var src = "/img/s" + Math.floor(Math.random() * 2 + 1) + ".png"; //两张图片分别为"s1.png"、"s2.png"
+        snow(left, height, src);
+    }, 500);
+})();
+</script>
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -316,11 +344,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">线程</a>
+                <a href="javascript:void(0)" class="js-tag color3">引用</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">引用</a>
+                <a href="javascript:void(0)" class="js-tag color3">线程</a>
               </li>
              
               <li class="article-tag-list-item">
